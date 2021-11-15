@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"../sass/style.scss",
+		"../sass/_variable.scss",
+		"../sass/_font.scss"
+	],
+	"sourcesContent": [
+		"@import \"variable\";\r\n@import \"font\";\r\n\r\n",
+		"$main-color: red;\r\n$second-color: black;",
+		""
+	],
+	"names": [],
+	"mappings": ""
+}
