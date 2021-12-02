@@ -1,5 +1,217 @@
 .header {
-  background-color: $beige;
-  min-height: calc(100vh - 1.8rem);
-  padding-top: 1.8rem;
+  overflow: hidden;
+  padding: 8.8rem 1.5rem 2rem 1.5rem;
 }
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content {
+  width: 100%;
+
+  .header-content-pretitle {
+    font-family: $secondary-font;
+    font-weight: $secondary-font-weight-common;
+    color: $black;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &::after{
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 0.1rem;
+      flex-basis: 0;
+      flex-grow: 1;
+      min-width: 0;
+      max-width: 11rem;
+      background-color: $black;
+      margin-left: 10px;
+    }
+  }
+
+  .header-content-title {
+    font-family: $main-font;
+    font-weight: $main-font-weight;
+    color: $red;
+    font-size: 2.3rem;
+    max-width: 22rem;
+    margin-bottom: 1rem;
+  }
+
+  .header-content-paragraph {
+    font-size: 0.75rem;
+    font-family: $secondary-font;
+    font-weight: $secondary-font-weight-common;
+    line-height: 20px;
+    margin-bottom: 1rem;
+
+    .header-content-showup {
+      font-weight: $secondary-font-weight-text;
+      color: $red;
+    }
+  }
+
+  .header-content-link {
+    color: $red;
+    font-family: $secondary-font;
+    font-weight: $secondary-font-weight-text;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+    font-size: 0.90rem;
+    position: relative;
+    width: max-content;
+    overflow: hidden;
+    @include flex-center;
+
+     &::before, &::after{
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url($arrow-icon);
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: inline-block;
+      transition: $slow-transition;
+    }
+
+    &::before {
+      transform: translate(-100%,-16px);
+      position: absolute;
+      right: 0px;
+    }
+
+    &::after {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      &::before{
+        transform: translate(0%, 0px);
+      }
+
+      &::after{
+        transform: translate(100%, 16px);
+      }
+    }
+  }
+}
+
+.header-illustation {
+  width: 100%;
+
+  .header-illustration-container {
+    position: absolute;
+    top: -55px;
+    right: -30px;
+    animation: full-rotate 15s linear infinite;
+    width: max-content;
+    height: max-content;
+
+    .header-illustation-info {
+      width: 10rem;
+    }
+  }
+
+  .header-illustation-img {
+    width: 100%;
+  }
+}
+
+@include md-up {
+  .header-container {
+      width: 60%;
+      margin: 0 auto;
+  }
+}
+
+@include lg-header-up {
+  .header {
+    padding-top: 7rem;
+    min-height: calc(100vh - 9rem);
+  }
+
+  .header-container {
+    flex-direction: row;
+    min-height: inherit;
+    width: 100%;
+  }
+
+  .header-content {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 2rem;
+    max-width: 32rem;
+
+    .header-content-pretitle {
+      font-size: 1.2rem;
+    }
+
+    .header-content-title {
+      font-size: 4rem;
+      max-width: 95%;
+      padding-bottom: 1.5rem;
+    }
+
+    .header-content-paragraph {
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-content-link {
+      font-size: 1.2rem;
+       &::before, &::after{
+        width: 18px;
+        height: 18px;
+       }
+
+      &::before {
+        transform: translate(-100%,-20px);
+      }
+
+      &:hover {
+        &::before{
+          transform: translate(0%, 0px);
+        }
+
+        &::after{
+          transform: translate(100%, 20px);
+        }
+      }
+    }
+  }
+
+  .header-illustation {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-height: calc(100vh - 10rem);
+    margin-left: auto;
+
+    .header-illustration-container {
+        bottom: 25px;
+        left: -130px;
+        right: unset;
+        top: unset;
+
+      .header-illustation-info {
+        width: 13rem;
+      }
+    }
+
+    .header-illustation-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+

@@ -13,9 +13,12 @@ $secondary-font-weight-common: 400;
 $secondary-font-weight-text: 700;
 
 /* TRANSITION */
-$main-transition: 0.5s ease;
+$main-transition: 0.2s ease-in-out;
+$slow-transition: 0.5s ease;
 
 /* MEDIAQUERY SIZE */
 $media-md: '48rem';
-$media-lg: '53rem';
+$media-lg: '62rem';
 $media-xl: '75rem';
+
+$media-lg-header: '70.625rem';
