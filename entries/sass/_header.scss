@@ -81,7 +81,7 @@
     }
 
     &::before {
-      transform: translate(-100%,-16px);
+      transform: translate(-100%,-18px);
       position: absolute;
       right: 0px;
     }
@@ -96,7 +96,7 @@
       }
 
       &::after{
-        transform: translate(100%, 16px);
+        transform: translate(100%, 18px);
       }
     }
   }
@@ -173,7 +173,7 @@
        }
 
       &::before {
-        transform: translate(-100%,-20px);
+        transform: translate(-100%,-23px);
       }
 
       &:hover {
@@ -182,7 +182,7 @@
         }
 
         &::after{
-          transform: translate(100%, 20px);
+          transform: translate(100%, 23px);
         }
       }
     }
