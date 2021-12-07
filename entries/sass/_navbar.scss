@@ -16,6 +16,7 @@
 
   .navbar-icon {
     width: 2rem;
+    fill: $black;
   }
 
   .navbar-line {
@@ -76,60 +77,57 @@
     }
 
     .menu-nav-item {
-        margin: 0 30px;
+      margin: 0 30px;
+    }
+
+    .menu-nav-link {
+      height: 1.3rem;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+      width: max-content;
+
+      .menu-nav-link-rolldown {
+        text-transform: uppercase;
+        color: $black;
+        font-size: 1rem;
+        position: relative;
+        transition: $main-transition;
+        display: block;
       }
 
-      .menu-nav-link {
-        height: 1.3rem;
-        position: relative;
-        overflow: hidden;
+      &::before{
+        content: attr(data-content);
+        position: absolute;
         display: block;
-        text-transform: uppercase;
+        width: 100%;
         text-align: center;
-        width: max-content;
+        top:0;
+        left:0;
+        transition: $main-transition;
+        transform: translateY(-100%);
+        color: $red;
+        cursor: pointer;
+      }
+
+      &:hover {
+        &::before {
+          transform: translateY(0%);
+        }
 
         .menu-nav-link-rolldown {
-          text-transform: uppercase;
-          color: $black;
-          font-size: 1rem;
-          position: relative;
-          transition: $main-transition;
-          display: block;
-        }
-
-        &::before{
-          content: attr(data-content);
-          position: absolute;
-          display: block;
-          width: 100%;
-          text-align: center;
-          top:0;
-          left:0;
-          transition: $main-transition;
-          transform: translateY(-100%);
-          color: $red;
-          cursor: pointer;
-        }
-
-        &:hover {
-          &::before {
-            transform: translateY(0%);
-          }
-
-          .menu-nav-link-rolldown {
-            transform: translateY(100%);
-          }
+          transform: translateY(100%);
         }
       }
-
-
+    }
 
     .menu-social {
       display: flex;
       justify-content: end;
       align-items: center;
       width: 30%;
-
 
       .menu-social-item {
         margin: 0 0.7rem;

@@ -1,0 +1,50 @@
+.dark-theme {
+  .cursor {
+    border-color: $pink;
+  }
+
+  .navbar {
+    .navbar-icon {
+      fill: $pink;
+    }
+
+    .navbar-line {
+      background-color: $pink;
+    }
+
+    .navbar-burger {
+      .navbar-burger-text {
+        color: $pink;
+      }
+
+      .navbar-burger-item {
+        background-color: $pink;
+      }
+    }
+  }
+}
+
+@include md-up {  
+  .dark-theme {
+    .menu {
+      .menu-nav-link {
+        .menu-nav-link-rolldown {
+          color: $pink;
+        }
+
+        &::before{
+          color: $beige;
+        }
+      }
+
+      .menu-social {
+        .menu-social-link {
+          color: $pink;
+          .menu-social-icon {
+            fill: $pink;
+          }
+        }
+      }
+    }
+  }
+}

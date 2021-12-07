@@ -4,7 +4,7 @@ let cursor = {
   y: 0,
   xMouse: 0,
   yMouse: 0,
-  delay: 0.3,
+  delay: 0.1,
 
   init(cursorDom)
   {
@@ -26,10 +26,9 @@ let cursor = {
     this.y = Math.ceil(calcY);
   },
 
-  // In moove we need to use the object to change "this"
+  // Don't use 'this' but 'cursor'
   moove()
   {
-
     // Need to add if/else for cursor on an element
     cursor.updateCursorPosition();
 

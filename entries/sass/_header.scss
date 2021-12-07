@@ -76,6 +76,7 @@
       background-image: url($arrow-icon);
       background-size: contain;
       background-repeat: no-repeat;
+      background-position: center center;
       display: inline-block;
       transition: $slow-transition;
     }

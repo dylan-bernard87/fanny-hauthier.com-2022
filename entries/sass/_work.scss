@@ -1,0 +1,115 @@
+.work {
+  padding: 8.8rem 1.5rem 2rem 1.5rem;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-item--border-top {
+  border-top: 1px solid $pink;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $pink;
+  padding: 1.5rem 0;
+
+  .work-item-title {
+    font-family: $main-font;
+    font-weight: $main-font-weight;
+    font-size: 1.4rem;
+    color: $pink;
+
+    .work-item-subtitle {
+      display: block;
+      font-family: $secondary-font;
+      font-weight: $secondary-font-weight-common;
+      font-size: 1.1rem;
+    }
+  }
+
+  .work-item-link {
+    border-radius: 50%;
+    border:1px solid $pink;
+    padding: 0.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    transition: $main-transition;
+    overflow: hidden;
+    position: relative;
+    @include flex-center;
+
+    &:hover {
+      background-color: $pink;
+    }
+
+    &::before, &::after{
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url($arrow-icon-pink);
+      background-size: 85%;
+      background-repeat: no-repeat;
+      display: inline-block;
+      transition: $slow-transition;
+    }
+
+     &::before {
+      transform: translate(-32px, -32px);
+      opacity: 1;
+      position: absolute;
+      background-image: url($arrow-icon-dark);
+    }
+
+    &:hover {
+      &::before{
+        transform: translate(0px, 0px);
+      }
+
+      &::after{
+        transform: translate(32px, 32px);
+      }
+    }
+  }
+
+  .work-item-icon {
+    width: 0.7rem;
+    stroke: $pink;
+  }
+}
+
+@include md-up {
+  .work {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .work-item {
+    padding: 2rem;
+
+    .work-item-title {
+      font-size: 2.5rem;
+
+      .work-item-subtitle {
+        font-size: 1.4rem;
+        display: inline;
+      }
+    }
+
+    .work-item-link {
+      padding: 0.8rem;
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .work-item-icon {
+      width: 1.2rem;
+    }
+  }
+}

@@ -10,20 +10,20 @@
 		<script defer src="assets/app.js"></script>
   </head>
   <body>
-		<div class="cursor" id="cursor"></div>
+    <div class="main" id="mainContainer">
+			<div class="cursor" id="cursor"></div>
 
-    <div class="main">
-      <header class="header container" data-color="var(--beige)">
+      <header class="header container" data-color="#FFF5F5">
         <nav class="navbar">
 					<div class="container">
 						<div class="navbar-container">
-							<svg class="navbar-icon" viewBox="0 0 38 72" fill="none">
+							<svg class="navbar-icon" viewBox="0 0 38 72">
 								<path
 									d="M22.56 49.46C22.56 49.46 16.74 50 16.74 42.62V28.94H22.08C22.14 28.94 28.5 28.82 29.22 36.02H29.76V21.32H29.22C28.5 28.58 22.14 28.4 22.08 28.4H16.74V8.3H18.9C18.9 8.3 35.82 8.36 35.82 20.06H36.36V7.76H1.5V8.24C4.14 8.24 4.98 12.32 4.98 16.04V41.78C4.98 45.86 4.02 49.46 1.5 49.46V50H22.56V49.46Z"
-									fill="#342929" />
+									 />
 								<path
 									d="M29.6421 39.117C29.6117 38.961 29.3993 38.961 29.3689 39.117C29.1565 40.1468 28.7923 41.8007 28.3977 42.5184C27.8514 43.5482 26.6677 44.1723 26.0911 44.422C25.9696 44.4844 25.9696 44.6404 26.0911 44.7028C26.6374 44.9525 27.7907 45.5454 28.3673 46.4816C28.8833 47.3241 29.2475 48.9156 29.4296 49.883C29.46 50.039 29.6724 50.039 29.7028 49.883C29.9152 48.8532 30.3098 47.1681 30.8257 46.3879C31.2506 45.7326 32.3736 45.0461 32.9199 44.7652C33.0413 44.7028 33.011 44.5468 32.9199 44.4844C32.3736 44.2348 31.1292 43.5794 30.5829 42.6121C30.1277 41.8319 29.8242 40.1468 29.6421 39.117Z"
-									fill="#342929" />
+									 />
 							</svg>
 						
 							<div class="navbar-burger" id="burger">
@@ -58,11 +58,11 @@
 												<g clip-path="url(#clip0_322_2)">
 													<path
 														d="M263.744 318.869C263.744 279.445 244.992 250.304 206.251 239.381C234.517 225.92 249.259 205.525 249.259 173.803C249.259 111.253 202.496 96 148.544 96H0V410.048H152.704C209.963 410.048 263.744 382.677 263.744 318.869ZM69.248 149.611H134.229C159.211 149.611 181.696 156.608 181.696 185.493C181.696 212.16 164.203 222.891 139.456 222.891H69.248V149.611ZM69.2267 356.715V270.229H144.704C175.189 270.229 194.475 282.901 194.475 315.072C194.475 346.795 171.456 356.715 143.275 356.715H69.2267Z"
-														fill="black" />
+														/>
 													<path
 														d="M400.981 416C455.467 416 490.752 391.531 507.733 339.52H452.437C446.485 358.933 421.952 369.195 402.923 369.195C366.208 369.195 346.923 347.755 346.923 311.317H511.467C516.672 238.4 476.053 176.256 400.96 176.256C331.435 176.256 284.245 228.352 284.245 296.597C284.245 367.424 328.96 416 400.981 416V416ZM399.019 223.445C430.485 223.445 446.315 241.877 448.96 272.021H347.008C349.077 242.133 368.981 223.445 399.019 223.445Z"
-														fill="black" />
-													<path d="M334.229 112.491H461.973V143.424H334.229V112.491Z" fill="black" />
+														 />
+													<path d="M334.229 112.491H461.973V143.424H334.229V112.491Z" />
 												</g>
 											</svg>
 
@@ -72,12 +72,10 @@
 										<a class="menu-social-link" href="#">
 											<svg class="menu-social-icon menu-social-icon--linkedin" viewBox="0 0 512 512">
 												<path
-													d="M423 413V290.672C423 230.552 410.057 184.627 339.917 184.627C306.1 184.627 283.555 202.997 274.37 220.532H273.535V190.055H207.152V413H276.457V302.362C276.457 273.137 281.885 245.165 317.79 245.165C353.277 245.165 353.695 278.147 353.695 304.032V412.582H423V413Z"
-													fill="black" />
-												<path d="M94.4275 190.055H163.732V413H94.4275V190.055Z" fill="black" />
+													d="M423 413V290.672C423 230.552 410.057 184.627 339.917 184.627C306.1 184.627 283.555 202.997 274.37 220.532H273.535V190.055H207.152V413H276.457V302.362C276.457 273.137 281.885 245.165 317.79 245.165C353.277 245.165 353.695 278.147 353.695 304.032V412.582H423V413Z"/>
+												<path d="M94.4275 190.055H163.732V413H94.4275V190.055Z"/>
 												<path
-													d="M129.08 79C106.953 79 89 96.9525 89 119.08C89 141.208 106.953 159.578 129.08 159.578C151.208 159.578 169.16 141.208 169.16 119.08C169.16 96.9525 151.208 79 129.08 79V79Z"
-													fill="black" />
+													d="M129.08 79C106.953 79 89 96.9525 89 119.08C89 141.208 106.953 159.578 129.08 159.578C151.208 159.578 169.16 141.208 169.16 119.08C169.16 96.9525 151.208 79 129.08 79V79Z"/>
 											</svg>
 										</a>
 									</li>
@@ -117,8 +115,33 @@
 				</div>
       </header>
 
-			<section class="container" data-color="var(--black)">
-
+			<section class="work container" data-color="#342929" data-theme="dark">
+				<ul class="work-list">
+					<li class="work-item work-item--border-top">
+						<h3 class="work-item-title">Bordeaux Beer Factory <span class="work-item-subtitle">| 2021</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+					<li class="work-item">
+						<h3 class="work-item-title">Snowpiercer <span class="work-item-subtitle">| 2022</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+					<li class="work-item">
+						<h3 class="work-item-title">Water ONG <span class="work-item-subtitle">| 2021</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+					<li class="work-item">
+						<h3 class="work-item-title">Libre Parfum YSL <span class="work-item-subtitle">| 2022</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+					<li class="work-item">
+						<h3 class="work-item-title">Tomorrowland Festival <span class="work-item-subtitle">| 2022</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+					<li class="work-item">
+						<h3 class="work-item-title">Ghibli Theme Park <span class="work-item-subtitle">| 2022</span></h3>
+						<a href="#" class="work-item-link"></a>
+					</li>
+				</ul>
 			</section>
     </div>
   </body>

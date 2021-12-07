@@ -1,5 +1,6 @@
-.temp {
-  background-color: $beige;
+.main {
+  position: relative;
+  z-index:2;
 }
 
 .cursor {
@@ -11,8 +12,14 @@
   top:-100px;
   left: -100px;
   transform: translateX(-50%) translateY(-50%);
-  // z-index: 9999;
-  mix-blend-mode: difference;
   background-color: transparent;
   transition: transform 0.2s ease;
+  z-index: -1;
+  display: none;
+}
+
+@include md-up {
+  .cursor {
+    display: block;
+  }
 }
