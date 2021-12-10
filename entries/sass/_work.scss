@@ -17,6 +17,7 @@
   justify-content: space-between;
   border-bottom: 1px solid $pink;
   padding: 1.5rem 0;
+  position: relative;
 
   .work-item-title {
     font-family: $main-font;
@@ -80,6 +81,16 @@
     width: 0.7rem;
     stroke: $pink;
   }
+
+  .work-item-img {
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    opacity: 1;
+    transition: width 0.3s, transform 0.15s;
+    width: 0;
+    display: none;
+  }
 }
 
 @include md-up {
@@ -110,6 +121,14 @@
 
     .work-item-icon {
       width: 1.2rem;
+    }
+
+    .work-item-img {
+      display: block;
+    }
+
+    .work-item-img-active {
+      width: 30rem;
     }
   }
 }
