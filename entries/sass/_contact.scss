@@ -1,0 +1,51 @@
+.contact {
+  min-height: 85vh;
+  padding: 6.5rem 1.5rem 1rem 1.5rem;
+
+  .contact-container {
+    @include flex-center;
+    flex-direction: column;
+    min-height: inherit;
+
+    .contact-title {
+      font-family: $main-font;
+      font-weight: $main-font-weight;
+      color: $red;
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .contact-link {
+      font-family: $secondary-font;
+      font-size: 1.68rem;
+      color: $black;
+      word-break: break-all;
+      text-align: center;
+      transition: $main-transition;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0);
+
+      &:hover {
+        text-decoration-color: rgba(255,255,255,1);
+      }
+    }
+  }
+}
+
+@include md-up {
+  .contact {
+    padding-top: 1.5rem;
+    .contact-container {
+      .contact-title {
+        font-size: 4rem;
+        max-width: 56rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .contact-link {
+        font-size: 1.9rem;
+      }
+    }
+  }
+}

@@ -1,50 +1,71 @@
 .dark-theme {
-  .cursor {
-    border-color: $pink;
+  .cursor, .work-item, .work-item-link
+  {
+    border-color: $pink !important;
   }
 
-  .navbar {
-    .navbar-icon {
-      fill: $pink;
+  .navbar-icon
+  {
+    fill: $pink !important;
+  }
+
+  .navbar-line, .navbar-burger-item
+  {
+    background-color: $pink !important;
+  }
+
+  .navbar-burger-text, .about-presentation-title, .about-detail-content-showup, .header-content-title,
+  .header-content-showup, .header-content-link, .work-item-title
+  {
+    color: $pink !important;
+  }
+
+  .about-detail-content-paragraph, .about-presentation-subtitle, .about-detail-skill-subtitle,
+  .about-detail-skill-item, .header-content-subtitle, .header-content-paragraph
+  {
+    color: $beige !important;
+  }
+
+  //Handle Special case
+  .about-presentation-subtitle, .about-detail-skill-subtitle, .header-content-subtitle {
+    &::after{
+      background-color: $beige !important;
+    }
+  }
+
+  .header-content-link {
+    &::before, &::after {
+      background-image: url($arrow-icon-pink) !important;
+    }
+  }
+
+  .work-item-link {
+    &:hover {
+      background-color: $pink !important;
     }
 
-    .navbar-line {
-      background-color: $pink;
-    }
-
-    .navbar-burger {
-      .navbar-burger-text {
-        color: $pink;
-      }
-
-      .navbar-burger-item {
-        background-color: $pink;
-      }
+    &::after {
+      background-image: url($arrow-icon-pink) !important;
     }
   }
 }
 
 @include md-up {  
   .dark-theme {
-    .menu {
-      .menu-nav-link {
-        .menu-nav-link-rolldown {
-          color: $pink;
-        }
+    .menu-nav-link-rolldown, .menu-social-link, .menu-social-link
+    {
+      color: $pink !important;
+    }
 
-        &::before{
-          color: $beige;
-        }
+    .menu-nav-link {
+      &::before{
+        color: $beige !important;
       }
+    }
 
-      .menu-social {
-        .menu-social-link {
-          color: $pink;
-          .menu-social-icon {
-            fill: $pink;
-          }
-        }
-      }
+    .menu-social-icon
+    {
+      fill: $pink !important;
     }
   }
 }

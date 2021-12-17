@@ -8,14 +8,14 @@
 }
 
 .work-item--border-top {
-  border-top: 1px solid $pink;
+  border-top: 1px solid $red;
 }
 
 .work-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid $pink;
+  border-bottom: 1px solid $red;
   padding: 1.5rem 0;
   position: relative;
 
@@ -23,7 +23,7 @@
     font-family: $main-font;
     font-weight: $main-font-weight;
     font-size: 1.4rem;
-    color: $pink;
+    color: $red;
 
     .work-item-subtitle {
       display: block;
@@ -35,7 +35,7 @@
 
   .work-item-link {
     border-radius: 50%;
-    border:1px solid $pink;
+    border:1px solid $red;
     padding: 0.5rem;
     width: 1.3rem;
     height: 1.3rem;
@@ -45,14 +45,14 @@
     @include flex-center;
 
     &:hover {
-      background-color: $pink;
+      background-color: $red;
     }
 
     &::before, &::after{
       content: "";
       width: 16px;
       height: 16px;
-      background-image: url($arrow-icon-pink);
+      background-image: url($arrow-icon);
       background-size: 85%;
       background-repeat: no-repeat;
       display: inline-block;
@@ -79,7 +79,7 @@
 
   .work-item-icon {
     width: 0.7rem;
-    stroke: $pink;
+    stroke: $red;
   }
 
   .work-item-img {

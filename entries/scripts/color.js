@@ -27,14 +27,24 @@ export function initColor()
       onEnter: function () {
         gsap.to("#mainContainer", { duration: 0.3, backgroundColor: color, overwrite: 'auto', autoAlpha: 1 });
 
-        if (el.dataset.theme === 'dark') {
+        if (el.dataset.theme === 'dark')
+        {
           mainCont.classList.add('dark-theme');
+        }
+        else
+        {
+          mainCont.classList.remove('dark-theme');
         }
       },
       onLeaveBack: function () {
         gsap.to("#mainContainer", { duration: 0.3, backgroundColor: prevColor, overwrite: 'auto', autoAlpha: 1 })
-        if (el.dataset.theme === 'dark') {
+        if (el.dataset.theme === 'dark')
+        {
           mainCont.classList.remove('dark-theme');
+        }
+        else
+        {
+          mainCont.classList.add('dark-theme');
         }
       }
     })

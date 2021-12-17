@@ -1,0 +1,43 @@
+.footer {
+  width: 100%;
+  padding:0 1.5rem 3rem 1.5rem;
+
+  .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100% - 3rem);
+
+    .footer-backTop {
+      font-size: 0.75rem;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      color: $black;
+    }
+
+    .footer-legal {
+      font-size: 0.75rem;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      color: $black;
+      text-align: right;
+      max-width: 60%;
+    }
+  }
+}
+
+@include md-up {
+  .footer {
+    .footer-container {
+
+      .footer-backTop {
+        font-size: 1.1rem;
+      }
+
+      .footer-legal {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
