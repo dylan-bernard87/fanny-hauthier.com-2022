@@ -15,13 +15,14 @@
   }
 
   .navbar-burger-text, .about-presentation-title, .about-detail-content-showup, .header-content-title,
-  .header-content-showup, .header-content-link, .work-item-title
+  .header-content-showup, .header-content-link, .work-item-title, .contact-title
   {
     color: $pink !important;
   }
 
   .about-detail-content-paragraph, .about-presentation-subtitle, .about-detail-skill-subtitle,
-  .about-detail-skill-item, .header-content-subtitle, .header-content-paragraph
+  .about-detail-skill-item, .header-content-subtitle, .header-content-paragraph, .contact-link,
+  .footer-backTop, .footer-legal
   {
     color: $beige !important;
   }

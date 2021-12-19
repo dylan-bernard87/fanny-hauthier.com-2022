@@ -48,11 +48,11 @@ class ItemProject
   {
     // Need to add if/else for cursor on an element
     obj.updateCursorPosition();
-
     obj.render();
 
     // For a better animation
-    window.requestAnimationFrame(function(){
+    window.requestAnimationFrame(function()
+    {
       obj.moove(obj);
     });
   }
@@ -76,23 +76,30 @@ class ItemProject
   }
 }
 
-let items = document.querySelectorAll('.work-item');
+export function initProjects()
+{
+  let items = document.querySelectorAll('.work-item');
 
-items.forEach(el=> {
-  let image = el.querySelector('.work-item-img');
+  items.forEach(el => {
+    let image = el.querySelector('.work-item-img');
 
-  if (image != undefined)
-  {
-    let item = new ItemProject(image);
-    itemsProjets.push(item);
+    if (image != undefined)
+    {
+      let item = new ItemProject(image);
+      itemsProjets.push(item);
 
-    el.addEventListener('mousemove', function(e){
-      item.updateMousePosition(e.clientX, e.clientY);
-      item.addClass();
-    });
+      el.addEventListener('mousemove', function (e)
+      {
+        item.updateMousePosition(e.clientX, e.clientY);
+        item.addClass();
+      });
 
-    el.addEventListener('mouseleave', function(){
-      item.removeClass();
-    });
-  }
-})
+      el.addEventListener('mouseleave', function ()
+      {
+        item.removeClass();
+      });
+    }
+    
+  })
+
+}

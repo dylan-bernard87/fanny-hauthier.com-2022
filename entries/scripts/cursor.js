@@ -55,7 +55,8 @@ export function initCursor()
   let cursorDom = document.querySelector('#cursor');
   cursor.init(cursorDom);
 
-  document.body.addEventListener('mousemove', function (e) {
+  document.body.addEventListener('mousemove', function (e)
+  {
     cursor.updateMousePosition(e.clientX, e.clientY);
   });
 }

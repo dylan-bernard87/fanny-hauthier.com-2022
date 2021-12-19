@@ -8,26 +8,24 @@ export function initColor()
   let mainCont = document.querySelector('#mainContainer');
   let containers = document.querySelectorAll('.container[data-color]');
 
-  gsap.set("#mainContainer",
-    {
-      duration: 0.5,
-      autoAlpha: 1,
-      backgroundColor: containers[0].dataset.color,
-      overwrite: 'auto'
-    });
-
-  containers.forEach((el, i) => {
+  containers.forEach((el, i) =>
+  {
     let color = el.dataset.color;
     let prevColor = i != 0 ? containers[i - 1].dataset.color : containers[i].dataset.color;
+
+    let theme = el.dataset.theme;
+    let prevTheme = i != 0 ? containers[i - 1].dataset.theme : containers[i].dataset.theme;
 
     ScrollTrigger.create({
       trigger: el,
       start: "top top+=300px",
       end: "bottom bottom-=100px",
-      onEnter: function () {
+
+      onEnter: function ()
+      {
         gsap.to("#mainContainer", { duration: 0.3, backgroundColor: color, overwrite: 'auto', autoAlpha: 1 });
 
-        if (el.dataset.theme === 'dark')
+        if (theme == "dark")
         {
           mainCont.classList.add('dark-theme');
         }
@@ -36,9 +34,11 @@ export function initColor()
           mainCont.classList.remove('dark-theme');
         }
       },
-      onLeaveBack: function () {
+
+      onLeaveBack: function ()
+      {
         gsap.to("#mainContainer", { duration: 0.3, backgroundColor: prevColor, overwrite: 'auto', autoAlpha: 1 })
-        if (el.dataset.theme === 'dark')
+        if (prevTheme == "light")
         {
           mainCont.classList.remove('dark-theme');
         }
@@ -48,5 +48,6 @@ export function initColor()
         }
       }
     })
+
   })
 }
