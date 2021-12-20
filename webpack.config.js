@@ -1,9 +1,9 @@
-
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   watch: true,
+  mode: "production",
   entry: './entries/app.js',
   output: {
     path: path.resolve(__dirname, 'assets'),
@@ -20,4 +20,8 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    concatenateModules: true,
+    removeAvailableModules: true,
+  }
 }

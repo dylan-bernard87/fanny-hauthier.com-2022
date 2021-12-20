@@ -31,10 +31,15 @@ html {
   left: -100px;
   transform: translateX(-50%) translateY(-50%);
   background-color: transparent;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
   z-index: 100;
   display: none;
-  pointer-events: none
+  pointer-events: none;
+}
+
+.cursor-classic-hover {
+  width: 12px;
+  height: 12px;
 }
 
 @include md-up {
