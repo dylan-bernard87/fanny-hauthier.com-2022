@@ -49,6 +49,11 @@
       background-image: url($arrow-icon-pink) !important;
     }
   }
+
+  // Handle contact flowers
+  .contact-background-top, .contact-background-bottom {
+    clip-path: circle(100%) !important;
+  }
 }
 
 @include md-up {  
