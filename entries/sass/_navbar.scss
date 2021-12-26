@@ -93,7 +93,7 @@
         color: $black;
         font-size: 1rem;
         position: relative;
-        transition: $main-transition;
+        // transition: $main-transition;
         display: block;
       }
 
@@ -106,18 +106,18 @@
         top:0;
         left:0;
         transition: $main-transition;
-        transform: translateY(-100%);
+        transform: translateY(-100%) !important;
         color: $red;
         cursor: pointer;
       }
 
       &:hover {
         &::before {
-          transform: translateY(0%);
+          transform: translateY(0%) !important;
         }
 
         .menu-nav-link-rolldown {
-          transform: translateY(100%);
+          transform: translateY(100%) !important;
         }
       }
     }
@@ -130,6 +130,7 @@
 
       .menu-social-item {
         margin: 0 0.7rem;
+        overflow: hidden
       }
 
       .menu-social-link {

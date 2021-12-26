@@ -42,6 +42,14 @@ html {
   height: 12px;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.classic-transition {
+  transition: $main-transition;
+}
+
 @include md-up {
   .cursor {
     display: block;
