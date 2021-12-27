@@ -1,5 +1,10 @@
 import { gsap } from 'gsap';
 
+let rollDownElements,
+    menuSocialElement,
+    headerIllustrationDeco,
+    headerIllustrationImage = undefined;
+
 function headerAnimate()
 {
   // Use simple timeline from gsap
@@ -12,8 +17,6 @@ function headerAnimate()
     0.2
   );
 
-  let rollDownElements = document.querySelectorAll(".menu-nav-link-rolldown");
-  let menuSocialElement = document.querySelectorAll(".menu-social-link");
   let navbarElement = [...rollDownElements, ...menuSocialElement];
 
   navbarElement.forEach((el, i)=> {
@@ -58,18 +61,35 @@ function headerAnimate()
   );
 
   // Add class transition after timeline
-  timeline.eventCallback("onComplete", addTransitionClass); 
+  timeline.eventCallback("onComplete", updateAfterComplete); 
 }
 
-function addTransitionClass()
+function updateAfterComplete()
 {
-  let rollDownElements = document.querySelectorAll(".menu-nav-link-rolldown");
   rollDownElements.forEach(el=>{
     el.classList.add('classic-transition');
   })
+
+  headerIllustrationDeco.style.display = "none";
+}
+
+function initNode()
+{
+  rollDownElements = document.querySelectorAll(".menu-nav-link-rolldown");
+  menuSocialElement = document.querySelectorAll(".menu-social-link");
+  headerIllustrationDeco = document.querySelector(".header-illustration-deco");
+  headerIllustrationImage = document.querySelector(".header-illustration-img");
+}
+
+function initIllustrationSize()
+{
+  headerIllustrationDeco.style.height = `${headerIllustrationImage.offsetHeight}px`;
+  headerIllustrationDeco.style.width = `${headerIllustrationImage.offsetWidth}px`;
 }
 
 export function initAnimation()
 {
+  initNode();
+  initIllustrationSize();
   headerAnimate();
 }
