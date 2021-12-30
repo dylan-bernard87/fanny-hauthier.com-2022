@@ -7,9 +7,9 @@ import { initProjects } from './scripts/project.js';
 import { initContact } from './scripts/contact.js';
 
 window.addEventListener('load', function(){
-  initAnimation();
-  initCursor();
-  initColor();
-  initProjects();
-  initContact(); 
+	initAnimation();
+	initCursor();
+	initColor();
+	initProjects();
+	initContact(); 
 })
