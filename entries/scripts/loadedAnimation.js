@@ -61,13 +61,13 @@ function headerAnimate()
 	);
 
 	// Add class transition after timeline
-	timeline.eventCallback("onComplete", updateAfterComplete); 
+	timeline.eventCallback("onComplete", updateAfterComplete);
 }
 
 function updateAfterComplete()
 {
 	rollDownElements.forEach(el=>{
-		el.classList.add('classic-transition');
+		el.classList.add('classic-transition-transform');
 	})
 
 	headerIllustrationDeco.style.display = "none";

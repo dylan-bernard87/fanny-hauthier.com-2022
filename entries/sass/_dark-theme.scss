@@ -4,7 +4,7 @@
     border-color: $pink !important;
   }
 
-  .navbar-icon
+  .navbar-icon, .menu-social-icon
   {
     fill: $pink !important;
   }
@@ -15,7 +15,7 @@
   }
 
   .navbar-burger-text, .about-presentation-title, .about-detail-content-showup, .header-content-title,
-  .header-content-showup, .header-content-link, .work-item-title, .contact-title
+  .header-content-showup, .header-content-link, .work-item-title, .contact-title, .menu-nav-link-rolldown, .menu-social-link, .menu-social-link
   {
     color: $pink !important;
   }
@@ -28,6 +28,12 @@
   }
 
   //Handle Special case
+	.menu-nav-link {
+		&::before {
+			color: $beige !important;
+		}
+	}
+
   .about-presentation-subtitle, .about-detail-skill-subtitle, .header-content-subtitle {
     &::after{
       background-color: $beige !important;
@@ -56,22 +62,3 @@
   }
 }
 
-@include md-up {  
-  .dark-theme {
-    .menu-nav-link-rolldown, .menu-social-link, .menu-social-link
-    {
-      color: $pink !important;
-    }
-
-    .menu-nav-link {
-      &::before{
-        color: $beige !important;
-      }
-    }
-
-    .menu-social-icon
-    {
-      fill: $pink !important;
-    }
-  }
-}

@@ -16,15 +16,22 @@
   .navbar-icon {
     width: 2rem;
     fill: $black;
+		position: relative;
+		z-index:15;
   }
 
   .navbar-line {
     height: 1px;
     width: 100%;
     background-color: $black;
+		position: relative;
+		z-index: 15;
   }
 
   .navbar-burger {
+		position: relative;
+		z-index: 15;
+		cursor: pointer;
 
     .navbar-burger-text {
       font-family: $secondary-font;
@@ -44,56 +51,49 @@
   position: fixed;
   left: 0;
   top: 0;
-  display: none;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	height: 0;
+	width: 100%;
+	background-color: $black;
+	z-index: 10;
+	overflow: hidden;
 
-  .menu-nav-link {
-    font-family: $secondary-font;
-  }
+	.menu-container {
+		height: 60%;
+		width: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		margin-bottom: 10%;
+	}
 
-  .menu-nav-link-rolldown {
-    font-family: $secondary-font;
-    font-weight: $secondary-font-weight-common;
-  }
-}
+	.menu-nav-list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: column;
+		height: 55%;
+		width: 100%;
 
-@include md-up {    
-  .navbar {
-    .navbar-burger {
-      display: none;
-    }
-  }
-
-  .menu {
-    position: static;
-    display: flex;
-    justify-content: space-between;
-    width: 77%;
-
-    .menu-nav-list {
-      @include flex-center;
-      width: 58%;
-      min-width: 22rem;
-    }
-
-    .menu-nav-item {
-      margin: 0 30px;
-    }
-
-    .menu-nav-link {
-      height: 1.3rem;
+		 .menu-nav-link {
+      height: 2.5rem;
       position: relative;
       overflow: hidden;
       display: block;
-      text-transform: uppercase;
       text-align: center;
       width: max-content;
+			font-family: $main-font;
+			font-size: 2.375rem;
+			font-weight: $main-font-weight;
 
       .menu-nav-link-rolldown {
-        text-transform: uppercase;
         color: $black;
-        font-size: 1rem;
+        font-size: 2.375rem;
         position: relative;
-        // transition: $main-transition;
+        font-family: $main-font;
         display: block;
       }
 
@@ -121,16 +121,121 @@
         }
       }
     }
+	}
 
-    .menu-social {
+	.menu-social {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 10%;
+		width: 100%;
+
+		.menu-social-item {
+			margin: 0 1.5rem;
+			overflow: hidden;
+		}
+
+		.menu-social-link {
+			@include flex-center;
+			font-size: 1.3rem;
+			font-family: $secondary-font;
+			font-weight: $secondary-font-weight-text;
+			color: $black;
+
+			.menu-social-icon {
+				width: 1.7rem;
+				fill: $black;
+			}
+
+			.menu-social-icon--linkedin {
+				width: 1.8rem;
+			}
+		}
+	}
+}
+
+.navbar-active {
+	.menu {
+		.menu-nav-list {
+			.menu-nav-link {
+				.menu-nav-link-rolldown {
+					color: $pink;
+				}
+
+				&::before {
+					color: $beige;
+				}
+			}
+		}
+
+		.menu-social {
+			.menu-social-link {
+				color: $pink;
+
+				.menu-social-icon {
+					fill: pink;
+				}
+			}
+		}
+	}
+}
+
+@include md-up {
+  .navbar {
+    .navbar-burger {
+      display: none;
+    }
+  }
+
+  .menu {
+    position: static;
+    width: 77%;
+		background-color:unset;
+		height: auto;
+
+		.menu-container {
+			height: auto;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			margin-bottom: 0;
+		}
+
+		.menu-nav-list {
+      justify-content: center;
+			flex-direction: row;
+      width: 58%;
+      min-width: 22rem;
+
+			.menu-nav-item {
+      	margin: 0 30px;
+    	}
+
+			.menu-nav-link {
+				height: 1.3rem;
+				text-transform: uppercase;
+				font-family: $secondary-font;
+				font-weight: $secondary-font-weight-common;
+				font-size: 1rem;
+
+				.menu-nav-link-rolldown {
+					font-size: inherit;
+					font-family: $secondary-font;
+					font-weight: $secondary-font-weight-common;
+				}
+			}
+    }
+
+		.menu-social {
       display: flex;
       justify-content: end;
       align-items: center;
       width: 30%;
+			height: 100%;
 
       .menu-social-item {
         margin: 0 0.7rem;
-        overflow: hidden
       }
 
       .menu-social-link {
@@ -139,10 +244,9 @@
         font-family: $secondary-font;
         font-weight: $secondary-font-weight-text;
         color: $black;
-      
+
         .menu-social-icon {
           width: 1.5rem;
-          fill: $black;
         }
 
         .menu-social-icon--linkedin {
@@ -150,11 +254,11 @@
         }
 
       }
-    }
-  }
+		}
+	}
 }
 
-@include xl-up { 
+@include xl-up {
   .menu {
     width: 68%;
 
