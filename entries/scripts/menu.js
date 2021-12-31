@@ -2,12 +2,12 @@ import { gsap } from 'gsap';
 
 let nodeChanged = false;
 
-let main,
-		menu,
+let menu,
 		navbar,
 		navbarIcon,
 		navbarLine,
 		navbarBurgerText,
+		menuNavLinks,
 		rollDownElements,
 		navbarBurgerItems,
 		menuSocialElements = undefined;
@@ -76,7 +76,6 @@ function activeMenu()
 
 	// Add class transition after timeline
 	timeline.eventCallback("onComplete", updateAfterComplete);
-
 }
 
 function unactiveMenu()
@@ -172,7 +171,7 @@ function handleMenu()
 	}
 }
 
-// This method try to reset all the value set during the animation
+// This method try to reset all the value set during the animation when user resize is window (> 48rem)
 function handleResizeMenu(e)
 {
 	// Clean menu
@@ -217,12 +216,20 @@ function handleResizeMenu(e)
 	}
 }
 
+function handleLinkMenu()
+{
+	if (window.matchMedia("(max-width: 48rem)").matches)
+	{
+		unactiveMenu();
+	}
+}
+
 function initNode()
 {
-	main = document.querySelector('.main');
 	menu = document.querySelector('.menu');
 	navbar = document.querySelector('.navbar');
 	navbarBurgerText = document.querySelector('.navbar-burger-text');
+	menuNavLinks = document.querySelectorAll('.menu-nav-link');
 	rollDownElements = document.querySelectorAll(".menu-nav-link-rolldown");
 	menuSocialElements = document.querySelectorAll(".menu-social-link");
 	navbarIcon = document.querySelector('.navbar-icon');
@@ -236,7 +243,11 @@ function initEventListener()
 	menu.addEventListener('click', handleMenu);
 
 	//close menu if resize and if upper than css variable to avoid bug
-	window.addEventListener('resize', handleResizeMenu)
+	window.addEventListener('resize', handleResizeMenu);
+
+	menuNavLinks.forEach(el=>{
+		el.addEventListener('click', handleLinkMenu)
+	})
 }
 
 export function initMenu()
