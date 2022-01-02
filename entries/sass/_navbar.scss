@@ -62,7 +62,7 @@
 
 	.menu-container {
 		height: 60%;
-		width: 80%;
+		width: 90%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -142,13 +142,25 @@
 			font-weight: $secondary-font-weight-text;
 			color: $black;
 
+			&:hover {
+				color: $red;
+			}
+
 			.menu-social-icon {
 				width: 1.7rem;
 				fill: $black;
+
+				&:hover {
+					fill: $red;
+				}
 			}
 
 			.menu-social-icon--linkedin {
 				width: 1.8rem;
+			}
+
+			.menu-social-icon--instagram {
+				width: 1.3rem;
 			}
 		}
 	}
@@ -251,6 +263,10 @@
 
         .menu-social-icon--linkedin {
           width: 1.6rem;
+        }
+
+				.menu-social-icon--instagram {
+          width: 1.3rem;
         }
 
       }

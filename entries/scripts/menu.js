@@ -99,18 +99,17 @@ function unactiveMenu()
 
 	timeline.to(navbarIcon,
 		{ fill: "#342929", duration: 0.3, ease: "ease-in-out" },
-		">-0.5"
+		">-0.7"
 	);
 
 	timeline.to(navbarBurgerText,
 		{ color: "#342929", textContent: navbarBurgerText.dataset.activeText, duration: 0.3, ease: "ease-in-out" },
-		">-0.5"
+		">-0.7"
 	);
-
 
 	timeline.to(".navbar-burger-item--first",
 		{ translateY: "0px", rotate: '0', duration: 0.3, ease: "ease-in-out" },
-		">-0.5"
+		">-0.7"
 	);
 
 	timeline.to(".navbar-burger-item--second",
@@ -204,7 +203,7 @@ function handleResizeMenu(e)
 		})
 
 		navbarBurgerText.style.color = null;
-		navbarBurgerText.textContent = navbarBurgerText.dataset.activeText
+		navbarBurgerText.textContent = navbarBurgerText.dataset.activeText;
 
 		// Reset the value
 		nodeChanged = false;

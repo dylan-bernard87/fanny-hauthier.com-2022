@@ -83,12 +83,13 @@
   }
 
   .work-item-img {
-    position: fixed;
+    position: absolute;
     transform: translateX(-50%) translateY(-50%);
     z-index: -1;
     opacity: 1;
     transition: width 0.3s, transform 0.15s;
     width: 0;
+		left: 50%;
     display: none;
   }
 }

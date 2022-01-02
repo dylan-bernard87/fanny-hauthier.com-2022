@@ -11,9 +11,11 @@ class ItemProject
 	delay = 0.15;
 	rotate = 0;
 
-	constructor(domObject)
+	constructor(domObject, y, x)
 	{
 		this.domObject = domObject;
+		this.xMouse = x;
+		this.yMouse = y;
 		this.moove(this);
 	}
 
@@ -85,12 +87,12 @@ export function initProjects()
 
 		if (image != undefined)
 		{
-			let item = new ItemProject(image);
+			let item = new ItemProject(image, el.offsetHeight/2, el.offsetWidth/2);
 			itemsProjets.push(item);
 
 			el.addEventListener('mousemove', function (e)
 			{
-				item.updateMousePosition(e.clientX, e.clientY);
+				item.updateMousePosition(e.offsetX, e.offsetY);
 				item.addClass();
 			});
 
@@ -99,7 +101,7 @@ export function initProjects()
 				item.removeClass();
 			});
 		}
-		
+
 	})
 
 }

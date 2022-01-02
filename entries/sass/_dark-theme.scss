@@ -34,6 +34,16 @@
 		}
 	}
 
+	.menu-social-link {
+		&:hover {
+			color: $beige !important;
+
+			.menu-social-icon {
+				fill: $beige !important
+			}
+		}
+	}
+
   .about-presentation-subtitle, .about-detail-skill-subtitle, .header-content-subtitle {
     &::after{
       background-color: $beige !important;

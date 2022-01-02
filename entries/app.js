@@ -6,6 +6,7 @@ import { initColor } from './scripts/color.js';
 import { initProjects } from './scripts/project.js';
 import { initContact } from './scripts/contact.js';
 import { initMenu } from './scripts/menu.js';
+import {initFooter } from './scripts/footer.js';
 
 window.addEventListener('load', function(){
 	initAnimation();
@@ -14,4 +15,5 @@ window.addEventListener('load', function(){
 	initMenu();
 	initProjects();
 	initContact();
+	initFooter();
 })
