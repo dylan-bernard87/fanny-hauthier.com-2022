@@ -25,7 +25,7 @@ class ItemProject
 		this.yMouse = yMouse;
 	}
 
-	updateCursorPosition()
+	updatePosition()
 	{
 		let calcY = this.calcDistance(this.y, this.yMouse, this.delay);
 		let calcX = this.calcDistance(this.x, this.xMouse, this.delay);
@@ -37,19 +37,19 @@ class ItemProject
 
 	addClass()
 	{
-		this.domObject.classList.add('work-item-img-active');
+		this.domObject.classList.add('work-item-project--active');
 	}
 
 	removeClass()
 	{
-		this.domObject.classList.remove('work-item-img-active');
+		this.domObject.classList.remove('work-item-project--active');
 	}
 
 	// Need to replace 'this' by 'obj'
 	moove(obj)
 	{
 		// Need to add if/else for cursor on an element
-		obj.updateCursorPosition();
+		obj.updatePosition();
 		obj.render();
 
 		// For a better animation
@@ -61,10 +61,7 @@ class ItemProject
 
 	render()
 	{
-		this.domObject.style.left = `${this.x}px`;
-		this.domObject.style.top = `${this.y}px`;
-
-		this.domObject.style.transform = `translate(-50%, -50%) rotate(${this.rotate}deg)`;
+		this.domObject.style.transform = `translate3d(${this.x}px,${this.y}px,0) rotate(${this.rotate}deg)`;
 	}
 
 	calcDistance(start, end, amt)
@@ -83,7 +80,7 @@ export function initProjects()
 	let items = document.querySelectorAll('.work-item');
 
 	items.forEach(el => {
-		let image = el.querySelector('.work-item-img');
+		let image = el.querySelector('.work-item-project');
 
 		if (image != undefined)
 		{
@@ -92,7 +89,9 @@ export function initProjects()
 
 			el.addEventListener('mousemove', function (e)
 			{
-				item.updateMousePosition(e.offsetX, e.offsetY);
+				let xCalculate = e.pageX - el.offsetLeft;
+				let yCalculate = e.pageY - el.offsetTop;
+				item.updateMousePosition(xCalculate, yCalculate);
 				item.addClass();
 			});
 

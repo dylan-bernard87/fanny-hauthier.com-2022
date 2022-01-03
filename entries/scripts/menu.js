@@ -220,6 +220,7 @@ function handleLinkMenu()
 	if (window.matchMedia("(max-width: 48rem)").matches)
 	{
 		unactiveMenu();
+		document.body.style.overflowY = 'unset';
 	}
 }
 

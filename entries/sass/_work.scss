@@ -82,15 +82,22 @@
     stroke: $red;
   }
 
-  .work-item-img {
+  .work-item-project {
     position: absolute;
-    transform: translateX(-50%) translateY(-50%);
     z-index: -1;
     opacity: 1;
     transition: width 0.3s, transform 0.15s;
     width: 0;
-		left: 50%;
+		top: 0;
+		left: 0;
     display: none;
+
+		.work-item-project-img {
+			width: 100%;
+			height: 100%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+		}
   }
 }
 
@@ -124,12 +131,13 @@
       width: 1.2rem;
     }
 
-    .work-item-img {
+    .work-item-project {
       display: block;
     }
 
-    .work-item-img-active {
+    .work-item-project--active {
       width: 30rem;
+			height: 16.875rem;
     }
   }
 }
