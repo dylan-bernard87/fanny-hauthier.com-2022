@@ -1,0 +1,56 @@
+body {
+	background-color: $beige;
+}
+
+.header {
+	width: 100%;
+	margin:1rem;
+	width: calc(100% - 2rem);
+
+	h1 {
+		color: $red;
+		font-family: $main-font;
+		font-weight: $main-font-weight;
+		text-align: center;
+		padding-bottom: 0.5rem;
+
+		&::after {
+			content:"";
+			display: block;
+			background-color: $red;
+			width: 8rem;
+			height: 0.1rem;
+			margin: 0 auto;
+			transform: translateY(10px);
+		}
+	}
+}
+
+.main {
+	margin: 1rem;
+	width: calc(100% - 2rem);
+
+	h2 {
+		font-family: $main-font;
+		font-weight: $main-font-weight;
+		color: $red;
+		padding-bottom: 0.2rem;
+	}
+
+	span {
+		font-weight: $secondary-font-weight-text;
+	}
+
+	p {
+		font-family: $secondary-font;
+		font-weight: $secondary-font-weight-common;
+	}
+
+	div {
+		padding-bottom: 2rem;
+	}
+
+	a {
+		color: $red;
+	}
+}
